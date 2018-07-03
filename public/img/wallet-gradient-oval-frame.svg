@@ -1,0 +1,12 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 640 480">
+    <defs><style>.cls-1{fill:url(#radial-gradient);}</style>
+        <radialGradient id="radial-gradient" cx="320" cy="239.5" r="311.71"
+            gradientTransform="translate(0 63.17) scale(1 0.74)" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+            <stop offset="0.7" stop-color="#fff" stop-opacity="0.69"/>
+            <stop offset="1" stop-color="#fff"/></radialGradient>
+    </defs>
+    <title>wallet-radial-gradient-frame</title>
+    <path class="cls-1" d="M640.5,480H-.5V-1h641Zm-321-376c-59.65,0-108,60.67-108,135.5S259.85,375,319.5,375s108-60.67,108-135.5S379.15,104,319.5,104Z" transform="translate(0.5 1)"/>
+</svg>

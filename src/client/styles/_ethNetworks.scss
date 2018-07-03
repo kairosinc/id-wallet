@@ -1,0 +1,16 @@
+// Ethereum Network Colors
+$eth-main: #028789;
+$eth-ropsten: #ea1550;
+$eth-kovan: #690496;
+$eth-rinkeby: #ebb33e;
+$eth-other: $pink;
+$eth-not-connected: $gray-200;
+
+.color-eth{
+  &-main {color: $eth-main; transform: rotate(45deg);}
+  &-ropsten{color: $eth-ropsten}
+  &-kovan{color: $eth-kovan; transform: rotate(45deg);}
+  &-rinkeby{color: $eth-rinkeby}
+  &-other{color: $eth-other}
+  &-not-connected{color:$eth-not-connected}
+}

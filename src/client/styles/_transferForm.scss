@@ -1,0 +1,26 @@
+/*
+.form-control:focus ~ .formHintText,
+.form-control:not(:focus):valid ~ .formHintText{
+  color: #2c3444;
+  top: 0px;
+  bottom: 10px;
+  left: 0px;
+  font-size: $font-size-sm;
+  opacity: 1;
+}
+
+.formHintText {
+  position: relative;
+  color: $gray-700;
+  pointer-events: none;
+  left: 10px;
+  top: -28px;
+  transition: 0.2s ease all;
+}
+*/
+
+input[type="submit"]:disabled {
+  background:$input-disabled-bg;
+  color:$text-muted;
+  border-color: $input-disabled-bg;
+}

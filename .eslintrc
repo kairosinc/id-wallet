@@ -1,0 +1,40 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": module
+  },
+  "rules": {
+    "no-cond-assign": 1,
+    "no-constant-condition": 1,
+    "no-control-regex": 1,
+    "no-dupe-args": 1,
+    "no-dupe-keys": 2,
+    "no-extra-boolean-cast": 1,
+    "no-extra-parens": 1,
+    "no-extra-semi": 1,
+    "no-func-assign": 1,
+    "no-unreachable": 1,
+    "use-isnan": 1,
+    "block-scoped-var": 2,
+    "dot-notation": 1,
+    "eqeqeq": [1, "smart"],
+    "no-eq-null": 1,
+    "no-loop-func": 1,
+    "no-magic-numbers": 2,
+    "no-multi-spaces": 1,
+    "no-redeclare": 2,
+    "no-unused-expressions": 1,
+    "no-unused-labels": 1,
+    "no-useless-return": 1,
+    "no-shadow": 1,
+    "no-undefined": 1,
+    "no-unused-vars": 1,
+    "no-use-before-define": 2,
+    "block-spacing": 1,
+    "comma-dangle": [1, "never"],
+    "func-call-spacing": 1,
+    "max-len": [1, 120],
+    "no-mixed-spaces-and-tabs": 1,
+    "no-trailing-spaces": 1
+  }
+}

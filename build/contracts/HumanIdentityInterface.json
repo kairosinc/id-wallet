@@ -1,0 +1,2997 @@
+{
+  "contractName": "HumanIdentityInterface",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "name": "verifications",
+      "outputs": [
+        {
+          "name": "oracleNonce",
+          "type": "string"
+        },
+        {
+          "name": "confidenceResult",
+          "type": "uint256"
+        },
+        {
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "name": "threshold",
+          "type": "uint256"
+        },
+        {
+          "name": "timestamp",
+          "type": "uint256"
+        },
+        {
+          "name": "identityProvider",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "verificationCounts",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "confidenceThreshold",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "registrations",
+      "outputs": [
+        {
+          "name": "timestamp",
+          "type": "uint256"
+        },
+        {
+          "name": "identityProvider",
+          "type": "address"
+        },
+        {
+          "name": "oracleNonce",
+          "type": "string"
+        },
+        {
+          "name": "registered",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "identityProvider",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "name": "verificationAttempts",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "oracleNonce",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "name": "RegisterUser",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "oracleNonce",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "name": "confidenceResult",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "name": "VerifyUser",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "oldProvider",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "newProvider",
+          "type": "address"
+        }
+      ],
+      "name": "IdentityProviderUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "oldThreshold",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "newThreshold",
+          "type": "uint256"
+        }
+      ],
+      "name": "ConfidenceThresholdUpdated",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "oracleNonce",
+          "type": "string"
+        },
+        {
+          "name": "confidenceResult",
+          "type": "uint256"
+        },
+        {
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "name": "r",
+          "type": "bytes32"
+        },
+        {
+          "name": "s",
+          "type": "bytes32"
+        },
+        {
+          "name": "v",
+          "type": "uint8"
+        }
+      ],
+      "name": "register",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "oracleNonce",
+          "type": "string"
+        },
+        {
+          "name": "confidenceResult",
+          "type": "uint256"
+        },
+        {
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "name": "r",
+          "type": "bytes32"
+        },
+        {
+          "name": "s",
+          "type": "bytes32"
+        },
+        {
+          "name": "v",
+          "type": "uint8"
+        }
+      ],
+      "name": "verify",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity 0.4.21;\n\n\n/**\n* @title HumanIdentityInterface\n* @author Adam Gall (adam@decentcrypto.com)\n* @notice The Human Identity Interface (HII) is a smart contract interface that defines the standard by which\n* Kairos and other biometric identity verification providers interact with contracts that implement it.\n* \n* The goal is to provide the blockchain community with an open source, decentralized standard for any\n* physical identity provider to implement, and a suite of example implementations of this standard for\n* both identity providers and identity verifying clients (such as a wallet for a token that associates\n* identity to a transaction using the HII).\n* \n* The HII is an interface (similar to ERC-20) that, when implemented by a smart contract, allows\n* identity providers to interact with said smart contract programmatically and autonomously. The\n* initial implementation of this standard interface targets the Ethereum blockchain, but could be\n* applied in other decentralized systems in the future.\n*/\ncontract HumanIdentityInterface {\n\n  /**\n  * @notice Registraion struct provides registration data for when an Ethereum account\n  * registers their biomentric data with the identityProvider\n  */\n  struct Registration {\n    uint    timestamp;          // Seconds since Unix Epoch\n    address identityProvider;   // Public address of identityProvider \n    string  oracleNonce;        // Unique event identifier returned by identityProvider\n    bool    registered;         // Bool indicating registration status (for code optimizations)\n  }\n  \n  /**\n  * @notice Verification struct provides verification data from when an Ethereum account\n  * verifies their biometric data with the identityProvider\n  */\n  struct Verification {\n    string  oracleNonce;      // Unique event identifier returned by identityProvider\n    uint    confidenceResult; // Confidence value returned by identityProvider\n    address user;             // Address of user attempting verification (used as hash input)\n    uint    threshold;        // Confidence threshold required for verification (set on contract deployment)\n    uint    timestamp;        // Seconds since Unix Epoch\n    address identityProvider; // Public address of identityProvider \n  }\n\n  // Emits when user attempts registration\n  event RegisterUser(address indexed sender, string oracleNonce, bool success); \n  \n  // Emits when user attempts verification\n  event VerifyUser(address indexed sender, string oracleNonce, uint confidenceResult, bool success);\n  \n  // Emits when identity provider address is updated\n  event IdentityProviderUpdated(address oldProvider, address newProvider);\n  \n  // Emits when confidence threshold is updated\n  event ConfidenceThresholdUpdated(uint oldThreshold, uint newThreshold);\n\n  // Public address of the contract's identity provider\n  address public identityProvider;\n\n  // Updateable confidence threshold to compare against confidence results sent from identity provider\n  uint public confidenceThreshold;\n\n  // User address -> Registration object\n  mapping(address => Registration) public registrations;\n\n  // Hash of user address + verificationCount -> Verification object\n  mapping(bytes32 => Verification) public verifications;\n\n  // User address -> number of verification attempts. For the 1->many relationship of registered users to their verification attempts\n  mapping(address => uint) public verificationCounts;\n\n  // Hash of signed data -> bool indicating that an oracle response has been used before. For replay attacks.\n  mapping(bytes32 => bool) public verificationAttempts;\n\n  /**\n  * @notice Receive biometrically verified payload and signature \n  * from offchain oracle, along with `to` recipient, and \n  * number of tokens to transfer.\n  * @param oracleNonce Unique identifier from offchain oracle identity provider\n  * @param confidenceResult Confidence level returned by the identity provider\n  * @param user Public address of the user verifyting their transaction\n  * @param r Signature data\n  * @param s Signature data\n  * @param v Signature data\n  */\n  function register(string oracleNonce, uint confidenceResult, address user, bytes32 r, bytes32 s, uint8 v) \n  public returns (bool success);\n\n  /**\n  * @notice Receive biometrically verified payload and signature from offchain oracle, \n  * along with `to` recipient, and number of tokens to transfer.\n  * A user may call this method multiple times after `register`ing.\n  * @dev This function reverts if the data being passed in does not have a valid signature\n  * from the private key of the contract's `identityProvider`.\n  * It also reverts if the sender has not yet `register`ed on the contract\n  * It also reverts if the input data has been successfully used in a validation.\n  * @param oracleNonce Unique identifier from offchain oracle identity provider\n  * @param confidenceResult Confidence level returned by the identity provider\n  * @param user Public address of the user verifyting their transaction\n  * @param r Signature data\n  * @param s Signature data\n  * @param v Signature data\n  * @return Whether or not the verification's `confidenceResult` was above the contract's threshold\n  */\n  function verify(string oracleNonce, uint confidenceResult, address user, bytes32 r, bytes32 s, uint8 v)\n  public returns (bool success);\n}",
+  "sourcePath": "/Users/train/Documents/Work/Decent/kairos/wallet/contracts/HumanIdentity/HumanIdentityInterface.sol",
+  "ast": {
+    "absolutePath": "/Users/train/Documents/Work/Decent/kairos/wallet/contracts/HumanIdentity/HumanIdentityInterface.sol",
+    "exportedSymbols": {
+      "HumanIdentityInterface": [
+        438
+      ]
+    },
+    "id": 439,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 331,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".21"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@title HumanIdentityInterface\n@author Adam Gall (adam@decentcrypto.com)\n@notice The Human Identity Interface (HII) is a smart contract interface that defines the standard by which\nKairos and other biometric identity verification providers interact with contracts that implement it.\n\n* The goal is to provide the blockchain community with an open source, decentralized standard for any\nphysical identity provider to implement, and a suite of example implementations of this standard for\nboth identity providers and identity verifying clients (such as a wallet for a token that associates\nidentity to a transaction using the HII).\n\n* The HII is an interface (similar to ERC-20) that, when implemented by a smart contract, allows\nidentity providers to interact with said smart contract programmatically and autonomously. The\ninitial implementation of this standard interface targets the Ethereum blockchain, but could be\napplied in other decentralized systems in the future.",
+        "fullyImplemented": false,
+        "id": 438,
+        "linearizedBaseContracts": [
+          438
+        ],
+        "name": "HumanIdentityInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "HumanIdentityInterface.Registration",
+            "id": 340,
+            "members": [
+              {
+                "constant": false,
+                "id": 333,
+                "name": "timestamp",
+                "nodeType": "VariableDeclaration",
+                "scope": 340,
+                "src": "1252:17:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 332,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1252:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 335,
+                "name": "identityProvider",
+                "nodeType": "VariableDeclaration",
+                "scope": 340,
+                "src": "1312:24:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 334,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1312:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 337,
+                "name": "oracleNonce",
+                "nodeType": "VariableDeclaration",
+                "scope": 340,
+                "src": "1383:19:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string storage pointer"
+                },
+                "typeName": {
+                  "id": 336,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1383:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string storage pointer"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 339,
+                "name": "registered",
+                "nodeType": "VariableDeclaration",
+                "scope": 340,
+                "src": "1471:18:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 338,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1471:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Registration",
+            "nodeType": "StructDefinition",
+            "scope": 438,
+            "src": "1226:340:1",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "HumanIdentityInterface.Verification",
+            "id": 353,
+            "members": [
+              {
+                "constant": false,
+                "id": 342,
+                "name": "oracleNonce",
+                "nodeType": "VariableDeclaration",
+                "scope": 353,
+                "src": "1758:19:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string storage pointer"
+                },
+                "typeName": {
+                  "id": 341,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1758:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string storage pointer"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 344,
+                "name": "confidenceResult",
+                "nodeType": "VariableDeclaration",
+                "scope": 353,
+                "src": "1844:24:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 343,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1844:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 346,
+                "name": "user",
+                "nodeType": "VariableDeclaration",
+                "scope": 353,
+                "src": "1923:12:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 345,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1923:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 348,
+                "name": "threshold",
+                "nodeType": "VariableDeclaration",
+                "scope": 353,
+                "src": "2017:17:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 347,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "2017:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 350,
+                "name": "timestamp",
+                "nodeType": "VariableDeclaration",
+                "scope": 353,
+                "src": "2126:17:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 349,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "2126:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 352,
+                "name": "identityProvider",
+                "nodeType": "VariableDeclaration",
+                "scope": 353,
+                "src": "2184:24:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 351,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "2184:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Verification",
+            "nodeType": "StructDefinition",
+            "scope": 438,
+            "src": "1732:520:1",
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 361,
+            "name": "RegisterUser",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 360,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 355,
+                  "indexed": true,
+                  "name": "sender",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 361,
+                  "src": "2318:22:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 354,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2318:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 357,
+                  "indexed": false,
+                  "name": "oracleNonce",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 361,
+                  "src": "2342:18:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string memory"
+                  },
+                  "typeName": {
+                    "id": 356,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2342:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string storage pointer"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 359,
+                  "indexed": false,
+                  "name": "success",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 361,
+                  "src": "2362:12:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 358,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2362:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2317:58:1"
+            },
+            "src": "2299:77:1"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 371,
+            "name": "VerifyUser",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 370,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 363,
+                  "indexed": true,
+                  "name": "sender",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 371,
+                  "src": "2443:22:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 362,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2443:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 365,
+                  "indexed": false,
+                  "name": "oracleNonce",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 371,
+                  "src": "2467:18:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string memory"
+                  },
+                  "typeName": {
+                    "id": 364,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2467:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string storage pointer"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 367,
+                  "indexed": false,
+                  "name": "confidenceResult",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 371,
+                  "src": "2487:21:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 366,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2487:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 369,
+                  "indexed": false,
+                  "name": "success",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 371,
+                  "src": "2510:12:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 368,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2510:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2442:81:1"
+            },
+            "src": "2426:98:1"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 377,
+            "name": "IdentityProviderUpdated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 376,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 373,
+                  "indexed": false,
+                  "name": "oldProvider",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 377,
+                  "src": "2613:19:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 372,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2613:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 375,
+                  "indexed": false,
+                  "name": "newProvider",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 377,
+                  "src": "2634:19:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 374,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2634:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2612:42:1"
+            },
+            "src": "2583:72:1"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 383,
+            "name": "ConfidenceThresholdUpdated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 382,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 379,
+                  "indexed": false,
+                  "name": "oldThreshold",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 383,
+                  "src": "2742:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 378,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2742:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 381,
+                  "indexed": false,
+                  "name": "newThreshold",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 383,
+                  "src": "2761:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 380,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2761:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2741:38:1"
+            },
+            "src": "2709:71:1"
+          },
+          {
+            "constant": false,
+            "id": 385,
+            "name": "identityProvider",
+            "nodeType": "VariableDeclaration",
+            "scope": 438,
+            "src": "2840:31:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 384,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "2840:7:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 387,
+            "name": "confidenceThreshold",
+            "nodeType": "VariableDeclaration",
+            "scope": 438,
+            "src": "2979:31:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 386,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "2979:4:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 391,
+            "name": "registrations",
+            "nodeType": "VariableDeclaration",
+            "scope": 438,
+            "src": "3056:53:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Registration_$340_storage_$",
+              "typeString": "mapping(address => struct HumanIdentityInterface.Registration storage ref)"
+            },
+            "typeName": {
+              "id": 390,
+              "keyType": {
+                "id": 388,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "3064:7:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "3056:32:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Registration_$340_storage_$",
+                "typeString": "mapping(address => struct HumanIdentityInterface.Registration storage ref)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 389,
+                "name": "Registration",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 340,
+                "src": "3075:12:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Registration_$340_storage_ptr",
+                  "typeString": "struct HumanIdentityInterface.Registration storage pointer"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 395,
+            "name": "verifications",
+            "nodeType": "VariableDeclaration",
+            "scope": 438,
+            "src": "3183:53:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Verification_$353_storage_$",
+              "typeString": "mapping(bytes32 => struct HumanIdentityInterface.Verification storage ref)"
+            },
+            "typeName": {
+              "id": 394,
+              "keyType": {
+                "id": 392,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "3191:7:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "3183:32:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Verification_$353_storage_$",
+                "typeString": "mapping(bytes32 => struct HumanIdentityInterface.Verification storage ref)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 393,
+                "name": "Verification",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 353,
+                "src": "3202:12:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Verification_$353_storage_ptr",
+                  "typeString": "struct HumanIdentityInterface.Verification storage pointer"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 399,
+            "name": "verificationCounts",
+            "nodeType": "VariableDeclaration",
+            "scope": 438,
+            "src": "3375:50:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+              "typeString": "mapping(address => uint256)"
+            },
+            "typeName": {
+              "id": 398,
+              "keyType": {
+                "id": 396,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "3383:7:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "3375:24:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                "typeString": "mapping(address => uint256)"
+              },
+              "valueType": {
+                "id": 397,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "3394:4:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 403,
+            "name": "verificationAttempts",
+            "nodeType": "VariableDeclaration",
+            "scope": 438,
+            "src": "3540:52:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_bytes32_$_t_bool_$",
+              "typeString": "mapping(bytes32 => bool)"
+            },
+            "typeName": {
+              "id": 402,
+              "keyType": {
+                "id": 400,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "3548:7:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "3540:24:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_bytes32_$_t_bool_$",
+                "typeString": "mapping(bytes32 => bool)"
+              },
+              "valueType": {
+                "id": 401,
+                "name": "bool",
+                "nodeType": "ElementaryTypeName",
+                "src": "3559:4:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@notice Receive biometrically verified payload and signature \nfrom offchain oracle, along with `to` recipient, and \nnumber of tokens to transfer.\n@param oracleNonce Unique identifier from offchain oracle identity provider\n@param confidenceResult Confidence level returned by the identity provider\n@param user Public address of the user verifyting their transaction\n@param r Signature data\n@param s Signature data\n@param v Signature data",
+            "id": 420,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "register",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 416,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 405,
+                  "name": "oracleNonce",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 420,
+                  "src": "4099:18:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string memory"
+                  },
+                  "typeName": {
+                    "id": 404,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4099:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string storage pointer"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 407,
+                  "name": "confidenceResult",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 420,
+                  "src": "4119:21:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 406,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4119:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 409,
+                  "name": "user",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 420,
+                  "src": "4142:12:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 408,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4142:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 411,
+                  "name": "r",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 420,
+                  "src": "4156:9:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 410,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4156:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 413,
+                  "name": "s",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 420,
+                  "src": "4167:9:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 412,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4167:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 415,
+                  "name": "v",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 420,
+                  "src": "4178:7:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 414,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4178:5:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4098:88:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 419,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 418,
+                  "name": "success",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 420,
+                  "src": "4206:12:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 417,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4206:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4205:14:1"
+            },
+            "scope": 438,
+            "src": "4081:139:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@notice Receive biometrically verified payload and signature from offchain oracle, \nalong with `to` recipient, and number of tokens to transfer.\nA user may call this method multiple times after `register`ing.\n@dev This function reverts if the data being passed in does not have a valid signature\nfrom the private key of the contract's `identityProvider`.\nIt also reverts if the sender has not yet `register`ed on the contract\nIt also reverts if the input data has been successfully used in a validation.\n@param oracleNonce Unique identifier from offchain oracle identity provider\n@param confidenceResult Confidence level returned by the identity provider\n@param user Public address of the user verifyting their transaction\n@param r Signature data\n@param s Signature data\n@param v Signature data\n@return Whether or not the verification's `confidenceResult` was above the contract's threshold",
+            "id": 437,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "verify",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 433,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 422,
+                  "name": "oracleNonce",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 437,
+                  "src": "5198:18:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string memory"
+                  },
+                  "typeName": {
+                    "id": 421,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5198:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string storage pointer"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 424,
+                  "name": "confidenceResult",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 437,
+                  "src": "5218:21:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 423,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5218:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 426,
+                  "name": "user",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 437,
+                  "src": "5241:12:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 425,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5241:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 428,
+                  "name": "r",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 437,
+                  "src": "5255:9:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 427,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5255:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 430,
+                  "name": "s",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 437,
+                  "src": "5266:9:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 429,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5266:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 432,
+                  "name": "v",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 437,
+                  "src": "5277:7:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 431,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5277:5:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5197:88:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 436,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 435,
+                  "name": "success",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 437,
+                  "src": "5304:12:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 434,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5304:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5303:14:1"
+            },
+            "scope": 438,
+            "src": "5182:136:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 439,
+        "src": "1029:4291:1"
+      }
+    ],
+    "src": "0:5320:1"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/train/Documents/Work/Decent/kairos/wallet/contracts/HumanIdentity/HumanIdentityInterface.sol",
+    "exportedSymbols": {
+      "HumanIdentityInterface": [
+        438
+      ]
+    },
+    "id": 439,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 331,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".21"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@title HumanIdentityInterface\n@author Adam Gall (adam@decentcrypto.com)\n@notice The Human Identity Interface (HII) is a smart contract interface that defines the standard by which\nKairos and other biometric identity verification providers interact with contracts that implement it.\n\n* The goal is to provide the blockchain community with an open source, decentralized standard for any\nphysical identity provider to implement, and a suite of example implementations of this standard for\nboth identity providers and identity verifying clients (such as a wallet for a token that associates\nidentity to a transaction using the HII).\n\n* The HII is an interface (similar to ERC-20) that, when implemented by a smart contract, allows\nidentity providers to interact with said smart contract programmatically and autonomously. The\ninitial implementation of this standard interface targets the Ethereum blockchain, but could be\napplied in other decentralized systems in the future.",
+        "fullyImplemented": false,
+        "id": 438,
+        "linearizedBaseContracts": [
+          438
+        ],
+        "name": "HumanIdentityInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "HumanIdentityInterface.Registration",
+            "id": 340,
+            "members": [
+              {
+                "constant": false,
+                "id": 333,
+                "name": "timestamp",
+                "nodeType": "VariableDeclaration",
+                "scope": 340,
+                "src": "1252:17:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 332,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1252:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 335,
+                "name": "identityProvider",
+                "nodeType": "VariableDeclaration",
+                "scope": 340,
+                "src": "1312:24:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 334,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1312:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 337,
+                "name": "oracleNonce",
+                "nodeType": "VariableDeclaration",
+                "scope": 340,
+                "src": "1383:19:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string storage pointer"
+                },
+                "typeName": {
+                  "id": 336,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1383:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string storage pointer"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 339,
+                "name": "registered",
+                "nodeType": "VariableDeclaration",
+                "scope": 340,
+                "src": "1471:18:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 338,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1471:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Registration",
+            "nodeType": "StructDefinition",
+            "scope": 438,
+            "src": "1226:340:1",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "HumanIdentityInterface.Verification",
+            "id": 353,
+            "members": [
+              {
+                "constant": false,
+                "id": 342,
+                "name": "oracleNonce",
+                "nodeType": "VariableDeclaration",
+                "scope": 353,
+                "src": "1758:19:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string storage pointer"
+                },
+                "typeName": {
+                  "id": 341,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1758:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string storage pointer"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 344,
+                "name": "confidenceResult",
+                "nodeType": "VariableDeclaration",
+                "scope": 353,
+                "src": "1844:24:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 343,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1844:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 346,
+                "name": "user",
+                "nodeType": "VariableDeclaration",
+                "scope": 353,
+                "src": "1923:12:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 345,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1923:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 348,
+                "name": "threshold",
+                "nodeType": "VariableDeclaration",
+                "scope": 353,
+                "src": "2017:17:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 347,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "2017:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 350,
+                "name": "timestamp",
+                "nodeType": "VariableDeclaration",
+                "scope": 353,
+                "src": "2126:17:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 349,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "2126:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 352,
+                "name": "identityProvider",
+                "nodeType": "VariableDeclaration",
+                "scope": 353,
+                "src": "2184:24:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 351,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "2184:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Verification",
+            "nodeType": "StructDefinition",
+            "scope": 438,
+            "src": "1732:520:1",
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 361,
+            "name": "RegisterUser",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 360,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 355,
+                  "indexed": true,
+                  "name": "sender",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 361,
+                  "src": "2318:22:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 354,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2318:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 357,
+                  "indexed": false,
+                  "name": "oracleNonce",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 361,
+                  "src": "2342:18:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string memory"
+                  },
+                  "typeName": {
+                    "id": 356,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2342:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string storage pointer"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 359,
+                  "indexed": false,
+                  "name": "success",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 361,
+                  "src": "2362:12:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 358,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2362:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2317:58:1"
+            },
+            "src": "2299:77:1"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 371,
+            "name": "VerifyUser",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 370,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 363,
+                  "indexed": true,
+                  "name": "sender",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 371,
+                  "src": "2443:22:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 362,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2443:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 365,
+                  "indexed": false,
+                  "name": "oracleNonce",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 371,
+                  "src": "2467:18:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string memory"
+                  },
+                  "typeName": {
+                    "id": 364,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2467:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string storage pointer"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 367,
+                  "indexed": false,
+                  "name": "confidenceResult",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 371,
+                  "src": "2487:21:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 366,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2487:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 369,
+                  "indexed": false,
+                  "name": "success",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 371,
+                  "src": "2510:12:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 368,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2510:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2442:81:1"
+            },
+            "src": "2426:98:1"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 377,
+            "name": "IdentityProviderUpdated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 376,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 373,
+                  "indexed": false,
+                  "name": "oldProvider",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 377,
+                  "src": "2613:19:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 372,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2613:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 375,
+                  "indexed": false,
+                  "name": "newProvider",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 377,
+                  "src": "2634:19:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 374,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2634:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2612:42:1"
+            },
+            "src": "2583:72:1"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 383,
+            "name": "ConfidenceThresholdUpdated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 382,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 379,
+                  "indexed": false,
+                  "name": "oldThreshold",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 383,
+                  "src": "2742:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 378,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2742:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 381,
+                  "indexed": false,
+                  "name": "newThreshold",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 383,
+                  "src": "2761:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 380,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2761:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2741:38:1"
+            },
+            "src": "2709:71:1"
+          },
+          {
+            "constant": false,
+            "id": 385,
+            "name": "identityProvider",
+            "nodeType": "VariableDeclaration",
+            "scope": 438,
+            "src": "2840:31:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 384,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "2840:7:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 387,
+            "name": "confidenceThreshold",
+            "nodeType": "VariableDeclaration",
+            "scope": 438,
+            "src": "2979:31:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 386,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "2979:4:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 391,
+            "name": "registrations",
+            "nodeType": "VariableDeclaration",
+            "scope": 438,
+            "src": "3056:53:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Registration_$340_storage_$",
+              "typeString": "mapping(address => struct HumanIdentityInterface.Registration storage ref)"
+            },
+            "typeName": {
+              "id": 390,
+              "keyType": {
+                "id": 388,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "3064:7:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "3056:32:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Registration_$340_storage_$",
+                "typeString": "mapping(address => struct HumanIdentityInterface.Registration storage ref)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 389,
+                "name": "Registration",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 340,
+                "src": "3075:12:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Registration_$340_storage_ptr",
+                  "typeString": "struct HumanIdentityInterface.Registration storage pointer"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 395,
+            "name": "verifications",
+            "nodeType": "VariableDeclaration",
+            "scope": 438,
+            "src": "3183:53:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Verification_$353_storage_$",
+              "typeString": "mapping(bytes32 => struct HumanIdentityInterface.Verification storage ref)"
+            },
+            "typeName": {
+              "id": 394,
+              "keyType": {
+                "id": 392,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "3191:7:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "3183:32:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Verification_$353_storage_$",
+                "typeString": "mapping(bytes32 => struct HumanIdentityInterface.Verification storage ref)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 393,
+                "name": "Verification",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 353,
+                "src": "3202:12:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Verification_$353_storage_ptr",
+                  "typeString": "struct HumanIdentityInterface.Verification storage pointer"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 399,
+            "name": "verificationCounts",
+            "nodeType": "VariableDeclaration",
+            "scope": 438,
+            "src": "3375:50:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+              "typeString": "mapping(address => uint256)"
+            },
+            "typeName": {
+              "id": 398,
+              "keyType": {
+                "id": 396,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "3383:7:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "3375:24:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                "typeString": "mapping(address => uint256)"
+              },
+              "valueType": {
+                "id": 397,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "3394:4:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 403,
+            "name": "verificationAttempts",
+            "nodeType": "VariableDeclaration",
+            "scope": 438,
+            "src": "3540:52:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_bytes32_$_t_bool_$",
+              "typeString": "mapping(bytes32 => bool)"
+            },
+            "typeName": {
+              "id": 402,
+              "keyType": {
+                "id": 400,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "3548:7:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "3540:24:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_bytes32_$_t_bool_$",
+                "typeString": "mapping(bytes32 => bool)"
+              },
+              "valueType": {
+                "id": 401,
+                "name": "bool",
+                "nodeType": "ElementaryTypeName",
+                "src": "3559:4:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@notice Receive biometrically verified payload and signature \nfrom offchain oracle, along with `to` recipient, and \nnumber of tokens to transfer.\n@param oracleNonce Unique identifier from offchain oracle identity provider\n@param confidenceResult Confidence level returned by the identity provider\n@param user Public address of the user verifyting their transaction\n@param r Signature data\n@param s Signature data\n@param v Signature data",
+            "id": 420,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "register",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 416,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 405,
+                  "name": "oracleNonce",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 420,
+                  "src": "4099:18:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string memory"
+                  },
+                  "typeName": {
+                    "id": 404,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4099:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string storage pointer"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 407,
+                  "name": "confidenceResult",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 420,
+                  "src": "4119:21:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 406,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4119:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 409,
+                  "name": "user",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 420,
+                  "src": "4142:12:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 408,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4142:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 411,
+                  "name": "r",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 420,
+                  "src": "4156:9:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 410,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4156:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 413,
+                  "name": "s",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 420,
+                  "src": "4167:9:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 412,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4167:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 415,
+                  "name": "v",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 420,
+                  "src": "4178:7:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 414,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4178:5:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4098:88:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 419,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 418,
+                  "name": "success",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 420,
+                  "src": "4206:12:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 417,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4206:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4205:14:1"
+            },
+            "scope": 438,
+            "src": "4081:139:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@notice Receive biometrically verified payload and signature from offchain oracle, \nalong with `to` recipient, and number of tokens to transfer.\nA user may call this method multiple times after `register`ing.\n@dev This function reverts if the data being passed in does not have a valid signature\nfrom the private key of the contract's `identityProvider`.\nIt also reverts if the sender has not yet `register`ed on the contract\nIt also reverts if the input data has been successfully used in a validation.\n@param oracleNonce Unique identifier from offchain oracle identity provider\n@param confidenceResult Confidence level returned by the identity provider\n@param user Public address of the user verifyting their transaction\n@param r Signature data\n@param s Signature data\n@param v Signature data\n@return Whether or not the verification's `confidenceResult` was above the contract's threshold",
+            "id": 437,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "verify",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 433,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 422,
+                  "name": "oracleNonce",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 437,
+                  "src": "5198:18:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string memory"
+                  },
+                  "typeName": {
+                    "id": 421,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5198:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string storage pointer"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 424,
+                  "name": "confidenceResult",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 437,
+                  "src": "5218:21:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 423,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5218:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 426,
+                  "name": "user",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 437,
+                  "src": "5241:12:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 425,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5241:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 428,
+                  "name": "r",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 437,
+                  "src": "5255:9:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 427,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5255:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 430,
+                  "name": "s",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 437,
+                  "src": "5266:9:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 429,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5266:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 432,
+                  "name": "v",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 437,
+                  "src": "5277:7:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 431,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5277:5:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5197:88:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 436,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 435,
+                  "name": "success",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 437,
+                  "src": "5304:12:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 434,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5304:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5303:14:1"
+            },
+            "scope": 438,
+            "src": "5182:136:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 439,
+        "src": "1029:4291:1"
+      }
+    ],
+    "src": "0:5320:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.21+commit.dfe3193c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.0",
+  "updatedAt": "2018-04-28T20:35:34.303Z"
+}

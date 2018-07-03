@@ -1,0 +1,32 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 640 480">
+    <defs>
+        <style>
+            .cls-1{fill:url(#linear-gradient);}
+            .cls-2{fill:url(#linear-gradient-2);}
+            .cls-3{fill:url(#linear-gradient-3);}
+            .cls-4{fill:url(#linear-gradient-4);}
+        </style>
+        <linearGradient id="linear-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="#FFF"/>
+            <stop offset="75%" stop-color="#FFF" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="linear-gradient-2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="25%" stop-color="#fff" stop-opacity="0"/>
+            <stop offset="100%" stop-color="#fff"/>
+        </linearGradient>
+        <linearGradient id="linear-gradient-3">
+            <stop offset="25%" stop-color="#fff"/>
+            <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="linear-gradient-4">
+            <stop offset="0%" stop-color="#FFF" stop-opacity="0"/>
+            <stop offset="75%" stop-color="#FFF"/>
+        </linearGradient>
+    </defs>
+    <title>wallet-radial-gradient-640x480</title>
+    <rect class="cls-1" x="0" y="0" width="100%" height="100"/>
+    <rect class="cls-2" x="0" y="380" width="100%" height="100" />
+    <rect class="cls-3" x="0" y="0" width="100" height="100%" />
+    <rect class="cls-4" x="540" y="0" width="100" height="100%" />
+</svg>
