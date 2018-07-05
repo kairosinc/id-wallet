@@ -11,7 +11,7 @@
     "dev": "concurrently \"yarn run develop \" \"yarn run develop:webpack \" \"yarn run develop:blockchain \" ",
     "develop": "nodemon --ignore lib --exec babel-node src/server",
     "develop:webpack": "webpack-dev-server --progress",
-    "develop:blockchain": "ganache-cli -m 'your secret here'",
+    "develop:blockchain": "ganache-cli -m 'candy maple cake sugar pudding cream honey rich smooth crumble sweet treat'",
     "build": "rimraf lib && babel src -d lib --ignore .test.js && cross-env NODE_ENV=production webpack -p --progress",
     "start": "cross-env NODE_ENV=production pm2 start lib/server && pm2 logs",
     "stop": "pm2 delete server",

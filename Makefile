@@ -4,7 +4,7 @@ build:
 	docker build --no-cache -t id-wallet:local .
 
 run:
-	docker run --detach --env-file=.env-ci --name=id-wallet --publish="8000:8000" id-wallet:local
+	docker run --detach --env-file=.env --name=id-wallet --publish="8000:8000" id-wallet:local
 
 logs:
 	docker logs id-wallet -f
@@ -13,7 +13,7 @@ stop:
 	docker stop id-wallet
 
 run-test:
-	docker run --env-file=.env-ci --name=id-wallet --publish="8000:8000" id-wallet:local yarn test
+	docker run --env-file=.env --name=id-wallet --publish="8000:8000" id-wallet:local yarn test
 
 clean:
 	docker stop id-wallet
