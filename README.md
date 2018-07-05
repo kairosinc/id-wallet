@@ -3,7 +3,7 @@ ALPHA Release
 # Kairos Identity Wallet™
 #### Kairos Identity Wallet™ for Kairos Identity Token™
 
-The Identity (ID) Wallet™ is a client-side wallet dApp that implements the Kairos Protocol™ ([Human Identity Interface™](/contracts/HumanIdentity) + [Kairos Face Recognition API](https://www.kairos.com/docs/api)). Users have the ability to store, send, and receive [Kairos Identity (ID) Tokens™](/tokenREADME.md), as well as issue transaction requests to other ID Wallet™ users.
+The Identity (ID) Wallet™ is a client-side wallet dApp that implements the Kairos Protocol™ ([Human Identity Interface™](/contracts/HumanIdentity) + [Kairos Face Recognition API](https://www.kairos.com/docs/api)). Users have the ability to store, send, and receive [Kairos Identity (ID) Tokens™](/README.md#kairos-identity-token), as well as issue transaction requests to other ID Wallet™ users.
 
 Because no existing wallets currently cater to the ID Token™ use cases, it will initially be the primary client interface used for holding and transacting ID Token™. Due to the fact that the ID Wallet™ is available for third-party integrations via an this open source code base, adoption by mobile and traditional web applications is entirely feasible. 
 
