@@ -17,7 +17,7 @@ applied in other decentralized systems in the future.
 
 ## Implementation
 
-The HII™ uses the (Kairos ID Signature Proxy)[https://github.com/kairosinc/id-signature-proxy] to securely communicate with the Kairos API. 
+The HII™ uses the [Kairos ID Signature Proxy](https://github.com/kairosinc/id-signature-proxy) to securely communicate with the Kairos API. 
 
 The interface is implemented with the following events, structs, variables, and functions.
 
