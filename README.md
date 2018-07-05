@@ -9,6 +9,8 @@ Because no existing wallets currently cater to the ID Token™ use cases, it wil
 
 Projects that would benefit from a biometrically verified token transaction system, but don’t necessarily have the resources to create their own, are now able to reap the benefits from such an integration. 
 
+#### Try our alpha release demo: https://wallet.kairos.com/
+
 ## Installation
 
 The app can easily be run either locally or using Docker with the included Dockerfile.
